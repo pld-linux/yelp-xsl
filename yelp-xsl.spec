@@ -5,7 +5,7 @@ Version:	3.1.6
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.0/%{name}-%{version}.tar.xz
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.1/%{name}-%{version}.tar.xz
 # Source0-md5:	59dfb715728f598ec9b4f9419e315559
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf

@@ -8,7 +8,7 @@ Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.6/%{name}-%{version}.tar.xz
 # Source0-md5:	1cdc0457a1a37e2139cc9f7f67b89e0e
 URL:		http://projects.gnome.org/yelp/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
 BuildRequires:	gettext-devel
 BuildRequires:	intltool >= 0.40.0

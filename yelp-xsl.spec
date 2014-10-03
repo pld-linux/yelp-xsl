@@ -13,8 +13,8 @@ BuildRequires:	automake >= 1:1.10
 BuildRequires:	gettext-devel
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	itstool >= 1.2.0
-BuildRequires:	libxml2-devel >= 1:2.6.12
-BuildRequires:	libxslt-devel >= 1.1.8
+BuildRequires:	libxml2-progs >= 1:2.6.12
+BuildRequires:	libxslt-progs >= 1.1.8
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz

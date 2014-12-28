@@ -10,7 +10,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.14/%{name}-%{version}
 URL:		http://projects.gnome.org/yelp/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.10
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libxml2-progs >= 1:2.6.12

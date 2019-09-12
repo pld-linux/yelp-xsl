@@ -1,18 +1,17 @@
 Summary:	XSL stylesheets for the Yelp help browser
 Summary(pl.UTF-8):	Arkusze styli XSL dla przeglądarki pomocy Yelp
 Name:		yelp-xsl
-Version:	3.32.1
+Version:	3.34.0
 Release:	1
 # depending on part, see COPYING
 License:	GPL v2+, LGPL v2+, MIT (see COPYING)
 Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.32/%{name}-%{version}.tar.xz
-# Source0-md5:	e5b800a872b50243570552402b56f0d6
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/yelp-xsl/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	f8c4e777aee8b055251c333ef48a0cd0
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.2
-BuildRequires:	gettext-tools
-BuildRequires:	intltool >= 0.40.0
+BuildRequires:	gettext-tools >= 0.19.4
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libxml2-progs >= 1:2.6.12
 BuildRequires:	libxslt-progs >= 1.1.8
@@ -43,11 +42,14 @@ bibliotek JavaScriptu jQuery i jQuery.Syntax.
 %setup -q
 
 %build
-%{__intltoolize}
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
 %configure \
+%if "%{_host_cpu}" != "x32"
+	--host=%{_host} \
+	--build=%{_host} \
+%endif
 	--enable-doc
 %{__make} -j1
 

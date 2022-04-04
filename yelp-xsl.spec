@@ -1,13 +1,13 @@
 Summary:	XSL stylesheets for the Yelp help browser
 Summary(pl.UTF-8):	Arkusze styli XSL dla przeglądarki pomocy Yelp
 Name:		yelp-xsl
-Version:	41.1
+Version:	42.0
 Release:	1
 # depending on part, see COPYING
 License:	GPL v2+, LGPL v2+, MIT (see COPYING)
 Group:		Libraries
-Source0:	https://download.gnome.org/sources/yelp-xsl/41/%{name}-%{version}.tar.xz
-# Source0-md5:	e8f353c8edc709c3de03ef2149791c80
+Source0:	https://download.gnome.org/sources/yelp-xsl/42/%{name}-%{version}.tar.xz
+# Source0-md5:	c0b4347468432ea778b541f34bd320bc
 URL:		https://wiki.gnome.org/Apps/Yelp
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake >= 1:1.11.2

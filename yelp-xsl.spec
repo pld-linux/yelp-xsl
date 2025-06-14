@@ -1,20 +1,20 @@
 Summary:	XSL stylesheets for the Yelp help browser
 Summary(pl.UTF-8):	Arkusze styli XSL dla przeglądarki pomocy Yelp
 Name:		yelp-xsl
-Version:	42.1
+Version:	42.4
 Release:	1
 # depending on part, see COPYING
 License:	GPL v2+, LGPL v2+, MIT (see COPYING)
 Group:		Libraries
 Source0:	https://download.gnome.org/sources/yelp-xsl/42/%{name}-%{version}.tar.xz
-# Source0-md5:	c41858c78e34bb8b68a535657a3e15d9
-URL:		https://wiki.gnome.org/Apps/Yelp
-BuildRequires:	autoconf >= 2.50
-BuildRequires:	automake >= 1:1.11.2
+# Source0-md5:	e0f6ed43c206bb205057d0adf76e83bd
+URL:		https://apps.gnome.org/Yelp/
 BuildRequires:	gettext-tools >= 0.19.4
 BuildRequires:	itstool >= 1.2.0
 BuildRequires:	libxml2-progs >= 1:2.6.12
 BuildRequires:	libxslt-progs >= 1.1.8
+BuildRequires:	meson >= 1.3
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	python3-ducktype
 BuildRequires:	tar >= 1:1.22
@@ -42,28 +42,24 @@ bibliotek JavaScriptu jQuery i jQuery.Syntax.
 %setup -q
 
 %build
-%{__aclocal} -I m4
-%{__autoconf}
-%{__automake}
-%configure \
-%if "%{_host_cpu}" != "x32"
-	--host=%{_host} \
-	--build=%{_host} \
-%endif
-	--enable-doc
-%{__make} -j1
+%meson \
+	-Ddita=true
+
+# TODO (requires xsltdoc-scan and mal2cache tools; they used to be included, but are no longer):
+# -Dyelp_manual=true
+
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%meson_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog NEWS README.md
+%doc AUTHORS COPYING NEWS README.md
 %{_datadir}/yelp-xsl
 %{_npkgconfigdir}/yelp-xsl.pc
